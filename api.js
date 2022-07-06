@@ -28,7 +28,8 @@ const server = http.createServer(async (req, res) => {
     if (req.method === "GET") {
         switch(req.url) {
             case "/api/blogs":
-        res.setHeader("Content-Type", "application/json" );
+        res.setHeader("Content-Type", "application/json" )
+        res.setHeader('Access-Control-Allow-Origin', '*');
                 res.end(JSON.stringify(blogs));
               break;
               default:
